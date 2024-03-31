@@ -1,4 +1,3 @@
-// pages/MessagingPage.js
 
 import { useState, useRef, useEffect } from 'react';
 
@@ -47,9 +46,9 @@ export default function MessagingPage() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         <div className="bg-blue-100 py-2 px-4 flex-none border-b border-blue-200">
-          <h1 className="text-xl font-semibold text-blue-700">Messaging Interface</h1>
+          <h1 className="text-xl font-semibold text-black">Talk It Out</h1>
         </div>
-        <div className="flex-1 flex flex-col-reverse bg-blue-100 overflow-y-auto px-4 py-3">
+        <div className="flex-1 flex flex-col bg-blue-100 overflow-y-auto px-4 py-3">
           {messages.map((message, index) => (
             <div key={index} className={`mb-2 ${message.sender === 'me' ? 'text-right' : 'text-left'}`}>
               <div className={`bg-white rounded-lg p-3 max-w-xs ${message.sender === 'me' ? 'ml-auto' : 'mr-auto'}`}>
