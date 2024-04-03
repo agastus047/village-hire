@@ -22,7 +22,8 @@ export default function Profile() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can handle form submission, for now, just log the values
+    // Here you can handle form submission, for now, just log the values 
+
     console.log('Form Data:', formData);
   };
 
