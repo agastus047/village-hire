@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer style={{ backgroundColor: 'rgba(139, 178, 178, 1)' }} className="p-4 text-center fixed bottom-0 w-full">
+    <footer style={{ backgroundColor: 'rgba(139, 178, 178, 1)' }} className="p-4 text-center w-full">
       <div className="flex justify-between">
         <div>
           <p className="text-sm">&copy; {new Date().getFullYear()} My Website. All rights reserved.</p>
