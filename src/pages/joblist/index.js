@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function JobListingPage() {
   const [isEmployerView, setIsEmployerView] = useState(false); // State to track whether it's employer view or employee view
   const [displayedRoles, setDisplayedRoles] = useState(3); // State to track the number of roles displayed
+
+  const router = useRouter();
 
   const toggleView = () => {
     setIsEmployerView((prevIsEmployerView) => !prevIsEmployerView);
@@ -11,6 +15,10 @@ export default function JobListingPage() {
 
   const handleShowMore = () => {
     setDisplayedRoles((prevDisplayedRoles) => prevDisplayedRoles + 3);
+  };
+
+  const handleNegotiateClick = (role) => {
+    router.push("messaging");
   };
 
   // Sample job roles
