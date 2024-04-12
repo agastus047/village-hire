@@ -58,7 +58,7 @@ const EmployeeHomePage = () => {
                 Available Jobs
             </button>
         </Link>
-        <Link href={"profile"}>
+        <Link href={"employee_edit_profile"}>
             <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
                 Edit Profile
             </button>

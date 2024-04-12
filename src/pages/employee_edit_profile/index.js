@@ -28,7 +28,7 @@ export default function Profile() {
 
   const postData = async () => {
     try {
-      const response = await supabase.from("employee").insert({...formData,name:session?.user?.name,email:session?.user?.email,profile:session?.user?.image});
+      const response = await supabase.from("employee").upsert({...formData,name:session?.user?.name,email:session?.user?.email,profile:session?.user?.image},{onConflict:'email'});
       if(response.error===null) {
         router.push("/employee_home");
       }

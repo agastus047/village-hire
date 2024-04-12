@@ -24,9 +24,18 @@ export default function Layout({children}) {
                         if(data.length===0) {
                             router.push("/employee_edit_profile");
                         }
+                        else {
+                            router.push("/employee_home");
+                        }
                     }
                     else if(role==="employer") {
-    
+                        const {data} = await supabase.from("employer").select("*").eq('email',session?.user?.email);
+                        if(data.length===0) {
+                            router.push("/employer_edit_profile");
+                        }
+                        else {
+                            router.push("/employer_home");
+                        }
                     }
                 }
                 if(!role) {

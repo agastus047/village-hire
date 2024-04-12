@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { RoleContext } from '@/contexts/RoleContext';
 import { signIn, useSession } from 'next-auth/react';
@@ -8,19 +7,15 @@ const EmployerHomePage = () => {
 
   const {status} = useSession();
 
-  const router = useRouter();
-
   const {roleState} = useContext(RoleContext);
   const [role,setRole] = roleState;
 
   const handleEmployeeClick = () => {
     setRole("employee");
-    router.push('/employee_home');
   };
 
   const handleEmployerClick = () => {
     setRole("employer");
-    router.push('/employer_home');
   };
 
   return (
