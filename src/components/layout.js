@@ -6,25 +6,38 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { RoleContext } from "@/contexts/RoleContext";
 import { useRouter } from "next/router";
+import supabase from "../../lib/supabase";
 
 export default function Layout({children}) {
 
+    const router = useRouter();
     const {status,data:session} = useSession();
     const {roleState} = useContext(RoleContext);
     const [role,setRole] = roleState;
 
     useEffect(() => {
         (async ()=> {
-            if(status==="authenticated") {
-                if(role==="employee") {
-
+            try{
+                if(status==="authenticated") {
+                    if(role==="employee") {
+                        const {data} = await supabase.from("employee").select('*').eq('email',session?.user?.email);
+                        if(data.length===0) {
+                            router.push("/employee_edit_profile");
+                        }
+                    }
+                    else if(role==="employer") {
+    
+                    }
                 }
-                else if(role==="employer") {
-
+                if(!role) {
+                    router.push("/");
                 }
             }
+            catch(error) {
+                console.log(error);
+            }
         })();
-    },[status]);
+    },[role]);
 
     return(<>
         <Head>

@@ -10,6 +10,11 @@ export default function Navbar() {
   const {roleState} = useContext(RoleContext);
   const [role,setRole] = roleState;
 
+  const handleSignOut = async ()  => {
+    await signOut();
+    setRole("");
+  };
+
   return (
     <div>
       <header style={{ backgroundColor: 'rgba(139, 178, 178, 1)', padding: '1rem' }} className="text-center">
@@ -24,6 +29,7 @@ export default function Navbar() {
               :
               <div onClick={() => signIn("google")} className="text-gray-800 hover:text-blue-600 hover:cursor-pointer">Sign In</div>
             }
+            <button className="text-gray-800 hover:text-blue-600 hover:cursor-pointer" onClick={handleSignOut}>Sign Out</button>
           </nav>
         }
         { (role==="employer") &&
@@ -36,9 +42,9 @@ export default function Navbar() {
               :
               <div onClick={() => signIn("google")} className="text-gray-800 hover:text-blue-600 hover:cursor-pointer">Sign In</div>
             }
+            <button className="text-gray-800 hover:text-blue-600 hover:cursor-pointer" onClick={handleSignOut}>Sign Out</button>
           </nav>
         }
-        <button onClick={() => signOut()}>Sign Out</button>
       </header>
     </div>
   );
