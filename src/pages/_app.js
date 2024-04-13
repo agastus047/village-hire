@@ -4,6 +4,7 @@ import {SessionProvider} from "next-auth/react";
 import { UserContextProvider } from "@/contexts/UserContext";
 import { RoleContextProvider } from "@/contexts/RoleContext";
 
+
 export default function App({ Component, pageProps: { session, ...pageProps}, }) {
   return (
     <SessionProvider session={session}>
