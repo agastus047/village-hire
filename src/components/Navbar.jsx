@@ -36,6 +36,7 @@ export default function Navbar() {
           <nav className="flex space-x-4 justify-end">
             <Link href="/employer_home" className="text-gray-800 font-semibold hover:text-blue-600">Home</Link>
             <Link href="/post_job" className="text-gray-800 hover:text-blue-600">Post job</Link>
+            <Link href="/posted_jobs" className="text-gray-800 hover:text-blue-600">Posted jobs</Link>
             {
               status==="authenticated" ?
               <Link href="/employer_profile" className="text-gray-800 hover:text-blue-600">Profile</Link>
