@@ -14,16 +14,10 @@ const EmployeeHomePage = () => {
 
 
 </div>
-
       <div className='flex gap-8 mt-10'>
         <Link href="joblist">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Available Jobs
-            </button>
-        </Link>
-        <Link href={"profile"}>
-            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-                Edit Profile
             </button>
         </Link>
       </div>
