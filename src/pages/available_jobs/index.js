@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
-import EmployerJobCard from '@/components/EmployerJobCard'; 
+import EmployeeJobCard from '@/components/EmployeeJobCard';
 import supabase from '../../../lib/supabase';
 
-const PostedJobsPage = () => {
+const AvailableJobsPage = () => {
   const { data: session } = useSession();
   const [postedJobs, setPostedJobs] = useState([]);
   const [loading,setLoading] = useState(true);
@@ -16,8 +16,7 @@ const PostedJobsPage = () => {
             .select(`
               *, 
               employer(name,company_name)
-            `)
-            .filter('owner','eq',session?.user?.email);
+            `);
             setPostedJobs(data);
             setLoading(false);
         }
@@ -33,14 +32,14 @@ const PostedJobsPage = () => {
       <div className='text-center text-3xl mt-12'>Loading...</div>
       :
       <div className="max-w-4xl mx-auto py-8">
-        <h1 className="text-4xl font-bold my-8 text-center">Posted Jobs</h1>
+        <h1 className="text-4xl font-bold my-8 text-center">Available Jobs</h1>
         <div className='grid grid-cols-2 gap-10'>
         {postedJobs.length > 0 ? (
           postedJobs.map((job) => (
-            <EmployerJobCard key={job.id} job={job} />
+            <EmployeeJobCard key={job.id} job={job} />
           ))
         ) : (
-          <p className='text-center text-3xl mt-12'>No posted jobs found.</p>
+          <p className='text-center text-3xl mt-12'>No jobs available.</p>
         )}
         </div>
       </div>
@@ -49,4 +48,4 @@ const PostedJobsPage = () => {
   );
 };
 
-export default PostedJobsPage;
+export default AvailableJobsPage;

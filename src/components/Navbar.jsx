@@ -22,7 +22,7 @@ export default function Navbar() {
         { (role==="employee") && 
           <nav className="flex space-x-4 justify-end">
             <Link href="/employee_home" className="text-gray-800 font-semibold hover:text-blue-600">Home</Link>
-            <Link href="/joblist" className="text-gray-800 hover:text-blue-600">Available Jobs</Link>
+            <Link href="/available_jobs" className="text-gray-800 hover:text-blue-600">Available Jobs</Link>
             {
               status==="authenticated" ?
               <Link href="/employee_profile" className="text-gray-800 hover:text-blue-600">Profile</Link>
