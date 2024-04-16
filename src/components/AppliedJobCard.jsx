@@ -1,11 +1,11 @@
 const AppliedJobCard = ({ job }) => {
   
-  let textColour = "black";
+  let textColour = "text-black";
   if(job.status==="rejected") {
-    textColour="red";
+    textColour="text-red-500";
   }
   else if(job.status==="accepted") {
-    textColour="green";
+    textColour="text-green-500";
   }
 
   return (
@@ -15,7 +15,7 @@ const AppliedJobCard = ({ job }) => {
       <p className="text-gray-600 mb-1"><b>Owner:</b> {job.employer.name}</p>
       <p className="text-gray-600 mb-1"><b>Company:</b> {job.employer.company_name}</p>
       <div className="text-xl text-gray-600 mt-4">
-        Status: <span className={`text-${textColour}`}>{job.status}</span>
+        Status: <span className={textColour}>{job.status}</span>
       </div>  
     </div>
   );
