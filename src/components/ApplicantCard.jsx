@@ -51,10 +51,13 @@ const ApplicantCard = ({application}) => {
             Status: <span className={textColour}>{application.status}</span>
           </div>
           {application.status==="pending" &&
-            <div className="flex gap-6">
+            <div>
+              <Link href={`/past_reviews/${application?.applicant}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Past Reviews</Link>
+              <div className="flex gap-6 mt-5">
                 <button onClick={handleAcceptClick} className="bg-green-500 text-black px-4 py-2 rounded">Accept</button>
                 <button onClick={handleRejectClick} className="bg-red-500 text-black px-4 py-2 rounded">Reject</button>
-            </div>  
+              </div>  
+            </div>
           }
           {application.status==="accepted" &&
             <Link href={`/review/${application.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
