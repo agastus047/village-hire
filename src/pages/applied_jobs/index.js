@@ -34,18 +34,19 @@ const AppliedJobsPage = () => {
     {loading ? 
       <div className='text-center text-3xl mt-12'>Loading...</div>
       :
-      <div className="max-w-4xl mx-auto py-8">
-        <h1 className="text-4xl font-bold my-8 text-center">Applied Jobs</h1>
-        <div className='grid grid-cols-3 gap-10'>
+      <div className="max-w-4xl mx-auto py-8 bg-white rounded-lg shadow-lg p-6">
+    <h1 className="text-4xl font-bold my-6 text-center text-[rgba(100,200,200,1)]">Applied Jobs</h1>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {appliedJobs.length > 0 ? (
-          appliedJobs.map((job) => (
-            <AppliedJobCard key={job.id} job={job} />
-          ))
+            appliedJobs.map((job) => (
+                <AppliedJobCard key={job.id} job={job} />
+            ))
         ) : (
-          <p className='text-center text-3xl mt-12'>No jobs available.</p>
+            <p className='text-center text-2xl mt-12 text-gray-700'>No jobs available.</p>
         )}
-        </div>
-      </div>
+    </div>
+</div>
+
     }
     </>
   );

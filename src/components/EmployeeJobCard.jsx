@@ -27,29 +27,33 @@ const EmployeeJobCard = ({ job }) => {
   };
 
   return (
-    <div className="border border-gray-500 rounded-md p-4 mb-4 bg-teal-50">
-      <h2 className="text-lg font-bold mb-2">{job.title}</h2>
-      <p className="text-gray-600 mb-1"><b>Owner:</b> {job.employer.name}</p>
-      <p className="text-gray-600 mb-1"><b>Company:</b> {job.employer.company_name}</p>
-      <p className="text-gray-600 mb-1"><b>Location:</b> {job.location}</p>
-      <p className="text-gray-600 mb-1"><b>Posted on:</b> {job.created_at}</p>
-      <p className="text-gray-600 mb-1"><b>Start Date:</b> {job.start_date}</p>
-      <p className="text-gray-600 mb-1"><b>End Date:</b> {job.end_date}</p>
-      <p className="text-gray-600 mb-1"><b>Hours Per Day:</b> {job.hrs}</p>
-      <p className="text-gray-600 mb-1"><b>Wage Per Day:</b> {job.wage}</p>
-      <p className="text-gray-600 mb-2"><b>Number of Workers Needed:</b> {job.count}</p>
-      <p className="text-gray-600 mb-2"><b>Description:</b> {job.description}</p>
-      <div className='flex gap-6'>
-        <button onClick={handleApplyClick} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+    <div className="max-w-lg mx-auto my-4 p-6 bg-white rounded-lg shadow-lg border-t-4 border-[rgba(120,200,200,1)]">
+    <h2 className="text-2xl font-bold mb-4 text-[rgba(139,178,178,1)]">{job.title}</h2>
+    <div className="text-gray-800 mb-3">
+        <p><span className="font-medium">Owner:</span> {job.employer.name}</p>
+        <p><span className="font-medium">Company:</span> {job.employer.company_name}</p>
+        <p><span className="font-medium">Location:</span> {job.location}</p>
+        <p><span className="font-medium">Posted on:</span> {job.created_at}</p>
+        <p><span className="font-medium">Start Date:</span> {job.start_date}</p>
+        <p><span className="font-medium">End Date:</span> {job.end_date}</p>
+        <p><span className="font-medium">Hours Per Day:</span> {job.hrs}</p>
+        <p><span className="font-medium">Wage Per Day:</span> {job.wage}</p>
+        <p><span className="font-medium">Number of Workers Needed:</span> {job.count}</p>
+        <p><span className="font-medium">Description:</span> {job.description}</p>
+    </div>
+    <div className="flex gap-4 mt-4">
+        <button onClick={handleApplyClick} className="bg-[rgba(120,200,200,1)] text-white font-semibold px-4 py-2 rounded-lg hover:bg-[rgba(139,178,178,1)] transition ease-in-out shadow-md">
             Apply
         </button>
-        <Link href={"/messaging"}>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <Link href="/messaging">
+            <button className="bg-[rgba(120,200,200,1)] text-white font-semibold px-4 py-2 rounded-lg hover:bg-[rgba(139,178,178,1)] transition ease-in-out shadow-md">
                 Negotiate
             </button>
         </Link>
-      </div>
     </div>
+</div>
+
+
   );
 };
 
