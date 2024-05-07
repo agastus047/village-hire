@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <header style={{ backgroundColor: 'rgba(139, 178, 178, 1)', padding: '1rem' }} className="text-center">
+      <header style={{ backgroundColor: 'rgba(120, 200, 200, 1)', padding: '1rem' }} className="text-center">
         <h2 className="text-5xl font-bold">VillageHire</h2> {/* Adjusted font size from text-lg to text-2xl */}
         { (role==="employee") && 
           <nav className="flex space-x-4 justify-end">
