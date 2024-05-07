@@ -16,7 +16,7 @@ const EmployeeHomePage = () => {
 </div>
       <div className='flex gap-8 mt-10'>
         <Link href="available_jobs">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-teal-600 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded">
                 Available Jobs
             </button>
         </Link>

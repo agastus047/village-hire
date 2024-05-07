@@ -47,7 +47,7 @@ function EmployerProfilePage() {
                     <p><span className="font-semibold">Description:</span> {employerProfile?.description}</p>
                 </div>
                 <div className="mt-8">
-                    <Link href={"/employer_edit_profile"} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    <Link href={"/employer_edit_profile"} className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-800">
                     Edit Profile
                     </Link>
                 </div>

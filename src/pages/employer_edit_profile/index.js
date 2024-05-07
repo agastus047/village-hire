@@ -62,7 +62,7 @@ function EmployerProfileEditPage() {
           <label className="block text-gray-700 font-bold mb-2" htmlFor="description">Company Description</label>
           <textarea id="description" name="description" value={formData.description} onChange={handleChange} className="border rounded-md px-4 py-2 w-full" rows="4" required />
         </div>
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button type="submit" className="bg-teal-600 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded">
           Save Changes
         </button>
       </form>
