@@ -59,7 +59,7 @@ export default function Profile() {
           <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
             {/* Personal Details Fields */}
             <div className="mb-4">
-              <label htmlFor="phone" className="block text-black mb-2">Phone No:</label>
+              <label htmlFor="phone" className="block text-black mb-2 rounded-md shadow-sm" >Phone No:</label>
               <input
                 type="text"
                 id="phone"
