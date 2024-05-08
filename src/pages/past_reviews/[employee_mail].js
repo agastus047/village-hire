@@ -60,7 +60,7 @@ const PastReviewsPage = () => {
         </div>
       )}
       <div className="text-center">
-        <button onClick={goBack} className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">Go Back</button>
+        <button onClick={goBack} className="bg-teal-600 hover:bg-teal-800 text-white px-4 py-2 rounded-md mt-4">Go Back</button>
       </div>
     </div>
   );

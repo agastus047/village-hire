@@ -51,8 +51,8 @@ const ApplicantCard = ({application}) => {
             Status: <span className={textColour}>{application.status}</span>
           </div>
           {application.status==="pending" &&
-            <div>
-              <Link href={`/past_reviews/${application?.applicant}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Past Reviews</Link>
+            <div className="flex flex-col items-center">
+              <Link href={`/past_reviews/${application?.applicant}`} className="bg-teal-600 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded">Past Reviews</Link>
               <div className="flex gap-6 mt-5">
                 <button onClick={handleAcceptClick} className="bg-green-500 text-black px-4 py-2 rounded">Accept</button>
                 <button onClick={handleRejectClick} className="bg-red-500 text-black px-4 py-2 rounded">Reject</button>
@@ -60,9 +60,11 @@ const ApplicantCard = ({application}) => {
             </div>
           }
           {application.status==="accepted" &&
-            <Link href={`/review/${application.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Add Review
-            </Link>
+            <div className="flex justify-center">
+              <Link href={`/review/${application.id}`} className="bg-teal-600 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded">
+                Add Review
+              </Link>
+            </div>
           }
         </div>
     );

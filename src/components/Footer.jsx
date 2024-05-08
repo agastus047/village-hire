@@ -13,10 +13,10 @@ const Footer = () => {
   };
 
   return (
-    <footer style={{ backgroundColor: 'rgba(120, 200, 200, 1)' }} className="p-4 text-center w-full">
+    <footer style={{ backgroundColor: 'rgba(139, 178, 178, 1)' }} className="p-4 text-center w-full">
       <div className="flex justify-between">
         <div>
-          <p className="text-sm">&copy; {new Date().getFullYear()} My Website. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} VILLAGE HIRE - All rights reserved.</p>
         </div>
         <div>
           <button style={buttonStyle}>Contact</button>
